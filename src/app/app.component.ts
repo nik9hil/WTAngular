@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'inventory';
+  title = 'sellx inventory';
+  items = [
+  ];
+
+  addTodo(item,cat,tot,price){
+    var newItem = {
+    label: item,
+    priority: cat,
+    total: tot,
+    money: price,
+    };
+    this.items.push(newItem)
+  }
+
+  deleteTodo(item){
+    this.items = this.items.filter(t => t.label != item.label);
+  }    
 }
